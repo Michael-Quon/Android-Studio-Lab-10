@@ -24,7 +24,7 @@ public class QuonActivity10 extends AppCompatActivity implements BottomNavigatio
     }
 
     Mi1chaelFragment mi1chaelFragment = new Mi1chaelFragment();
-//    PersonFragment personFragment = new PersonFragment();
+    Qu2onFragment qu2onFragment = new Qu2onFragment();
   //  SettingsFragment settingsFragment = new SettingsFragment();
     //MichaelFragment michaelFragment = new MichaelFragment();
 
@@ -40,13 +40,13 @@ public class QuonActivity10 extends AppCompatActivity implements BottomNavigatio
             return true;
         }
 
-//        if (itemId == R.id.Mic_Quon) {
-//            getSupportFragmentManager()
-//                    .beginTransaction()
-//               //     .replace(R.id.MicFlFragment, qu2onFragment)
-//                    .commit();
-//            return true;
-//        }
+        if (itemId == R.id.Mic_Quon) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.MicFlFragment, qu2onFragment)
+                    .commit();
+            return true;
+        }
 //
 //        if (itemId == R.id.Mic_N01565129) {
 //            getSupportFragmentManager()
