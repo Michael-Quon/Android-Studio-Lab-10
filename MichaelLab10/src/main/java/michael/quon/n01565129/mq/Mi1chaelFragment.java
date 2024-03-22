@@ -22,12 +22,13 @@ public class Mi1chaelFragment extends Fragment {
     private ProgressBar progressBar;
 
     private final String[] imageURLs = {
-            getString(R.string.blank), // Placeholder
-            getString(R.string.https_d_newsweek_com_en_full_1643309_pokemon_sword_shield_ash_pikachu_passwords_jpg_w_1600_h_1600_l_73_t_41_q_88_f_8771dba0ca0c7147d64d34d537123312),
-            getString(R.string.https_assets_pokemon_com_assets_cms2_img_pokedex_full_001_png),
-            getString(R.string.https_assets_pokemon_com_assets_cms2_img_pokedex_full_004_png),
-            getString(R.string.https_assets_pokemon_com_assets_cms2_img_pokedex_full_007_png)
+            "", // Placeholder
+            "https://d.newsweek.com/en/full/1643309/pokemon-sword-shield-ash-pikachu-passwords.jpg?w=1600&h=1600&l=73&t=41&q=88&f=8771dba0ca0c7147d64d34d537123312",
+            "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+            "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
+            "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png"
     };
+
 
     public Mi1chaelFragment() {
         // Required empty public constructor

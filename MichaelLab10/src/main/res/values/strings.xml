@@ -8,13 +8,18 @@
     <string name="mq">MQ</string>
     <string name="name_id">Michael Quon N01565129</string>
     <string name="download_image">Download Image</string>
-
-    <string name="temperature">temperature</string>
-    <string name="https_d_newsweek_com_en_full_1643309_pokemon_sword_shield_ash_pikachu_passwords_jpg_w_1600_h_1600_l_73_t_41_q_88_f_8771dba0ca0c7147d64d34d537123312"><![CDATA[https://d.newsweek.com/en/full/1643309/pokemon-sword-shield-ash-pikachu-passwords.jpg?w=1600&h=1600&l=73&t=41&q=88&f=8771dba0ca0c7147d64d34d537123312]]></string>
     <string name="blank" />
-    <string name="https_assets_pokemon_com_assets_cms2_img_pokedex_full_001_png">https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png</string>
-    <string name="https_assets_pokemon_com_assets_cms2_img_pokedex_full_004_png">https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png</string>
-    <string name="https_assets_pokemon_com_assets_cms2_img_pokedex_full_007_png">https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png</string>
+
+    <string name="temperature">Temperature:</string>
+    <string name="celsius">Celsius</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="longitude">Longitude:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="country">Country:</string>
+    <string name="humidity">Humidity:</string>
+    <string name="city">City:</string>
+    <string name="desc">Desc:</string>
+
 
     <string-array name="spinner_items">
         <item>Select Image</item>
