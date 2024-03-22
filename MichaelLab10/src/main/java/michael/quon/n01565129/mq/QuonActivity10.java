@@ -21,6 +21,7 @@ public class QuonActivity10 extends AppCompatActivity implements BottomNavigatio
         bottomNavigationView = findViewById(R.id.MicBottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.Mic_Michael);
+
     }
 
     Mi1chaelFragment mi1chaelFragment = new Mi1chaelFragment();

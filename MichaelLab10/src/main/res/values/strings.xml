@@ -10,15 +10,15 @@
     <string name="download_image">Download Image</string>
     <string name="blank" />
 
-    <string name="temperature">Temperature:</string>
+    <string name="temperature">"Temperature: "</string>
     <string name="celsius">Celsius</string>
     <string name="fahrenheit">Fahrenheit</string>
-    <string name="longitude">Longitude:</string>
-    <string name="latitude">Latitude:</string>
-    <string name="country">Country:</string>
-    <string name="humidity">Humidity:</string>
-    <string name="city">City:</string>
-    <string name="desc">Desc:</string>
+    <string name="longitude">"Longitude: "</string>
+    <string name="latitude">"Latitude: "</string>
+    <string name="country">"Country: "</string>
+    <string name="humidity">"Humidity: "</string>
+    <string name="city">"City: "</string>
+    <string name="desc">"Desc: "</string>
 
 
     <string-array name="spinner_items">
