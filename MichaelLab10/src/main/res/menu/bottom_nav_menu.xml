@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Mic_Michael"
+        android:title="@string/michael"
+        android:icon="@drawable/michael_person"/>
+
+    <item
+        android:id="@+id/Mic_Quon"
+        android:title="@string/quon"
+        android:icon="@drawable/quon_person"/>
+
+    <item
+        android:id="@+id/Mic_N01565129"
+        android:title="@string/n01565129"
+        android:icon="@drawable/id_people"/>
+
+    <item
+        android:id="@+id/Mic_MQ"
+        android:title="@string/mq"
+        android:icon="@drawable/mq_people"/>
+
+</menu>

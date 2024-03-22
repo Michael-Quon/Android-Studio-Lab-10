@@ -2,5 +2,19 @@
     <string name="app_name">MichaelLab10</string>
     <string name="name_id_copyright" translatable="false">By: Michael Quon N01565129 ©</string>
     <string name="description">The app\'s splash screen, shows for 3 seconds</string>
+    <string name="michael">Michael</string>
+    <string name="quon">Quon</string>
+    <string name="n01565129">N01565129</string>
+    <string name="mq">MQ</string>
+    <string name="name_id">Michael Quon N01565129</string>
+    <string name="download_image">Download Image</string>
+
+    <string-array name="spinner_items">
+        <item>Select Image</item>
+        <item>Pikachu</item>
+        <item>Bulbasaur</item>
+        <item>Charmander</item>
+        <item>Squirtle</item>
+    </string-array>
 
 </resources>
