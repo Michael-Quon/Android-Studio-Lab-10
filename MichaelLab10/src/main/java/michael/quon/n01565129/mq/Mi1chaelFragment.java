@@ -1,5 +1,7 @@
+// Michael Quon N01565129
 package michael.quon.n01565129.mq;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -10,11 +12,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.Target;
 
 public class Mi1chaelFragment extends Fragment {
 
@@ -57,19 +65,38 @@ public class Mi1chaelFragment extends Fragment {
             progressBar.setVisibility(View.VISIBLE);
             imageView.setVisibility(View.GONE); // Hide the default image
 
-            // Load image using Glide
+            /// Load image using Glide
             Glide.with(this)
                     .load(imageURL)
                     .apply(new RequestOptions()
-                            .placeholder(R.drawable.wallpaper_anime_574x1024) // Placeholder while loading
-                            .error(R.drawable.error)) // Error image if loading fails
+                            .placeholder(R.drawable.wallpaper_anime_574x1024)) // Placeholder while loading
+                    .listener(new RequestListener<Drawable>() {
+                        @Override
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                            // Hide progress bar on error
+                            progressBar.setVisibility(View.GONE);
+                            imageView.setVisibility(View.VISIBLE);
+                            // Display error message in a toast
+                            Toast.makeText(requireContext(), getString(R.string.failed_error) + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            // Show the error image
+                            imageView.setImageResource(R.drawable.error);
+                            // Return true to indicate that the failure has been handled
+                            return true;
+                        }
+
+                        @Override
+                        public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                            // Simulate the progress bar for 5 seconds
+                            new Handler().postDelayed(() -> {
+                                progressBar.setVisibility(View.GONE); // Hide the progress bar
+                                imageView.setVisibility(View.VISIBLE); // Show the downloaded image
+                            }, 5000); // 5000 milliseconds = 5 seconds
+                            return false; // Return false to allow Glide to handle displaying the image
+                        }
+                    })
                     .into(imageView); // ImageView to load the image into
 
-            // Simulate the progress bar for 5 seconds
-            new Handler().postDelayed(() -> {
-                progressBar.setVisibility(View.GONE); // Hide the progress bar
-                imageView.setVisibility(View.VISIBLE); // Show the downloaded image
-            }, 5000); // 5000 milliseconds = 5 seconds
+
         });
 
         return view;
