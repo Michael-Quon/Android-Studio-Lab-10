@@ -1,26 +1,66 @@
 <resources>
+    <!-- App Information -->
     <string name="app_name">MichaelLab10</string>
     <string name="name_id_copyright" translatable="false">By: Michael Quon N01565129 ©</string>
     <string name="description">The app\'s splash screen, shows for 3 seconds</string>
+    <string name="download_image">Download Image</string>
+    <string name="blank" />
+
+    <!-- Developer Information -->
     <string name="michael">Michael</string>
     <string name="quon">Quon</string>
     <string name="n01565129">N01565129</string>
     <string name="mq">MQ</string>
     <string name="name_id">Michael Quon N01565129</string>
-    <string name="download_image">Download Image</string>
-    <string name="blank" />
 
-    <string name="temperature">"Temperature: "</string>
+    <!-- Temperature Related -->
+    <string name="temperature_format">Temperature: %.1f %s</string>
     <string name="celsius">Celsius</string>
     <string name="fahrenheit">Fahrenheit</string>
+    <string name="unit_celsius">°C</string>
+    <string name="unit_fahrenheit">°F</string>
+    <string name="unit_metric">metric</string>
+    <string name="unit_imperial">imperial</string>
+    <string name="temp_unit_key">temp_unit</string>
+    <string name="default_temp_unit">metric</string>
+
+    <!-- API Information -->
+    <string name="api_key">b6c90bd7670d2dd27d3417dd128194fc</string>
+    <string name="api_url">"https://api.openweathermap.org/data/2.5/weather?q=%s&amp;appid=%s</string>
+    <string name="http_method_get">GET</string>
+
+    <!-- Key Names for JSON Response -->
+    <string name="coord_key">coord</string>
+    <string name="longitude_key">lon</string>
+    <string name="latitude_key">lat</string>
+    <string name="sys_key">sys</string>
+    <string name="country_key">country</string>
+    <string name="main_key">main</string>
+    <string name="humidity_key">humidity</string>
+    <string name="name_key">name</string>
+    <string name="weather_key">weather</string>
+    <string name="weather_description_key">description</string>
+    <string name="temperature_key">temp</string>
+
+    <!-- Labels -->
+    <string name="longitude_label">Longitude: %s</string>
+    <string name="latitude_label">Latitude: %s</string>
+    <string name="country_label">Country: %s</string>
+    <string name="humidity_label">Humidity: %d</string>
+    <string name="city_label">City: %s</string>
+    <string name="description_label">Description: %s</string>
+    <string name="failed_error">Failed to load image. \nError: %s</string>
+
+    <!-- UI Labels -->
     <string name="longitude">"Longitude: "</string>
     <string name="latitude">"Latitude: "</string>
     <string name="country">"Country: "</string>
     <string name="humidity">"Humidity: "</string>
     <string name="city">"City: "</string>
     <string name="desc">"Desc: "</string>
+    <string name="temperature">"Temperature: "</string>
 
-
+    <!-- Spinner Items -->
     <string-array name="spinner_items">
         <item>Select Image</item>
         <item>Pikachu</item>
@@ -29,6 +69,7 @@
         <item>Squirtle</item>
     </string-array>
 
+    <!-- City Names -->
     <string-array name="cities">
         <item>Toronto</item>
         <item>London</item>
@@ -36,5 +77,4 @@
         <item>Tokyo</item>
         <item>Sydney</item>
     </string-array>
-
 </resources>
