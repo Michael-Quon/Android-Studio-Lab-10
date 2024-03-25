@@ -1,3 +1,4 @@
+// Michael Quon N01565129
 package michael.quon.n01565129.mq;
 
 import android.content.SharedPreferences;
@@ -13,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -141,8 +143,8 @@ public class Qu2onFragment extends Fragment {
 
                 // Update UI on the main thread
                 requireActivity().runOnUiThread(() -> {
-                    longitudeTV.setText(getString(R.string.longitude_label, String.valueOf(longitude)));
-                    latitudeTV.setText(getString(R.string.latitude_label, String.valueOf(latitude)));
+                    longitudeTV.setText(getString(R.string.longitude_label, longitude));
+                    latitudeTV.setText(getString(R.string.latitude_label, latitude));
                     countryTV.setText(getString(R.string.country_label, country));
                     humidityTV.setText(getString(R.string.humidity_label, humidity));
                     cityTV.setText(getString(R.string.city_label, cityName));
@@ -158,6 +160,8 @@ public class Qu2onFragment extends Fragment {
 
             } catch (Exception e) {
                 e.printStackTrace();
+                // Show error in Toast
+                requireActivity().runOnUiThread(() -> Toast.makeText(requireContext(), getString(R.string.weather_error) + e.getMessage(), Toast.LENGTH_SHORT).show());
             }
         }).start();
     }

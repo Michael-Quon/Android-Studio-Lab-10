@@ -43,8 +43,8 @@
     <string name="temperature_key">temp</string>
 
     <!-- Labels -->
-    <string name="longitude_label">Longitude: %s</string>
-    <string name="latitude_label">Latitude: %s</string>
+    <string name="longitude_label">Longitude: %.4f</string>
+    <string name="latitude_label">Latitude: %.4f</string>
     <string name="country_label">Country: %s</string>
     <string name="humidity_label">Humidity: %d</string>
     <string name="city_label">City: %s</string>
@@ -59,6 +59,7 @@
     <string name="city">"City: "</string>
     <string name="desc">"Desc: "</string>
     <string name="temperature">"Temperature: "</string>
+    <string name="weather_error">"Error: "</string>
 
     <!-- Spinner Items -->
     <string-array name="spinner_items">
