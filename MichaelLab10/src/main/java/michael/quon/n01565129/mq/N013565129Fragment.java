@@ -58,7 +58,7 @@ public class N013565129Fragment extends Fragment {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int adapterPosition = holder.getAdapterPosition();
+                        int adapterPosition = holder.getBindingAdapterPosition();
                         if (adapterPosition != RecyclerView.NO_POSITION) {
                             // Load corresponding video URL into WebView
                             loadVideoUrl(videoUrls[adapterPosition]);
