@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DEFDE0"
+    tools:context=".N013565129Fragment">
+
+    <TextView
+        android:id="@+id/Mic_Frag3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/name_id"
+        android:textColor="#FF0000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Mic_recyclerView"
+        android:layout_width="354dp"
+        android:layout_height="218dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/Mic_webView"
+        android:layout_width="384dp"
+        android:layout_height="411dp"
+        android:layout_marginTop="264dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Mic_cars_icon"
+        android:layout_width="34dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginTop="84dp"
+        android:src="@drawable/cars_trailer_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Mic_kfp_icon"
+        android:layout_width="34dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginTop="135dp"
+        android:src="@drawable/cars_trailer_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Mic_aladdin_icon"
+        android:layout_width="34dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginTop="181dp"
+        android:src="@drawable/cars_trailer_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

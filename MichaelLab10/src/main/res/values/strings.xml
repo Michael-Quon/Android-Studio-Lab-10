@@ -1,3 +1,4 @@
+<!-- Michael Quon N01565129 -->
 <resources>
     <!-- App Information -->
     <string name="app_name">MichaelLab10</string>
@@ -78,6 +79,19 @@
         <item>Tokyo</item>
         <item>Sydney</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    !-- Define an array for video titles -->
+    <string-array name="video_titles">
+        <item>Cars Trailer</item>
+        <item>Kung Fu Panda Trailer</item>
+        <item>Aladdin (1992) Trailer</item>
+    </string-array>
+
+    <!-- Define an array for video URLs -->
+    <string-array name="video_urls">
+        <item>https://youtu.be/pQly7_Cj34U?si=kQ4qGBK8j5LvCCY9</item>
+        <item>https://youtu.be/NRc-ze7Wrxw?si=1Q15daQ2DEpI5f8i</item>
+        <item>https://youtu.be/eTjHiQKJUDY?si=1fA1_zFodONLHRhY</item>
+    </string-array>
+
 </resources>
