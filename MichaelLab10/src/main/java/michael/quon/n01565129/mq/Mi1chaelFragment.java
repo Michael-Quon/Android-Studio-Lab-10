@@ -37,7 +37,6 @@ public class Mi1chaelFragment extends Fragment {
             "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png"
     };
 
-
     public Mi1chaelFragment() {
         // Required empty public constructor
     }
@@ -95,8 +94,6 @@ public class Mi1chaelFragment extends Fragment {
                         }
                     })
                     .into(imageView); // ImageView to load the image into
-
-
         });
 
         return view;
