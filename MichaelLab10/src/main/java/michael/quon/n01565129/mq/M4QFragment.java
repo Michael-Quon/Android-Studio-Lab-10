@@ -15,6 +15,8 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
@@ -35,8 +37,6 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.text.SimpleDateFormat;
@@ -46,7 +46,6 @@ import java.util.Locale;
 public class M4QFragment extends Fragment {
 
     private int adClickCounter = 0;
-    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
     private static final int MAX_PERMISSION_REQUEST_ATTEMPTS = 2;
 
     private TextView datetimeTV;
@@ -153,19 +152,11 @@ public class M4QFragment extends Fragment {
             }
         });
 
-        locationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                requestLocationPermission();
-            }
-        });
+        locationButton.setOnClickListener(v -> requestLocationPermission());
 
         // Initialize Mobile Ads SDK
-        MobileAds.initialize(requireContext(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
-                // SDK initialization completed
-            }
+        MobileAds.initialize(requireContext(), initializationStatus -> {
+            // SDK initialization completed
         });
 
         // Load ad into AdView
@@ -181,20 +172,29 @@ public class M4QFragment extends Fragment {
         handler.post(updateTimeRunnable); // updates time
     }
 
+    // Declare an ActivityResultLauncher for requesting location permission
+    ActivityResultLauncher<String[]> requestLocationPermissionLauncher =
+            registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), permissions -> {
+                if (permissions.containsKey(Manifest.permission.ACCESS_FINE_LOCATION) &&
+                        Boolean.TRUE.equals(permissions.get(Manifest.permission.ACCESS_FINE_LOCATION))) {
+                    // Permission granted, start location updates
+                    requestLocationUpdates();
+                } else {
+                    // Permission denied, handle it accordingly
+                    permissionRequestCount++;
+                    if (permissionRequestCount <= MAX_PERMISSION_REQUEST_ATTEMPTS) {
+                        requestLocationPermission();
+                    } else {
+                        openAppSettings();
+                    }
+                }
+            });
+
     private void requestLocationPermission() {
-        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            requestLocationUpdates();
-        } else {
-            // Check if the user has denied the permission multiple times
-            if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
-                // Request permission
-                ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
-            } else {
-                // Permission denied multiple times, open app settings
-                openAppSettings();
-            }
-        }
+        // Request location permission using the launcher
+        requestLocationPermissionLauncher.launch(new String[]{Manifest.permission.ACCESS_FINE_LOCATION});
     }
+
 
     private void requestLocationUpdates() {
         LocationManager locationManager = (LocationManager) requireContext().getSystemService(Context.LOCATION_SERVICE);
@@ -207,15 +207,6 @@ public class M4QFragment extends Fragment {
                     // Remove location updates after receiving the first update
                     locationManager.removeUpdates(this);
                 }
-
-                @Override
-                public void onProviderEnabled(@NonNull String provider) {}
-
-                @Override
-                public void onProviderDisabled(@NonNull String provider) {}
-
-                @Override
-                public void onStatusChanged(String provider, int status, Bundle extras){}
             });
         }
     }
@@ -227,40 +218,16 @@ public class M4QFragment extends Fragment {
             // Construct the message with latitude and longitude
             String message = getString(R.string.location_snackbar_message, latitude, longitude);
             Snackbar.make(requireView(), message, Snackbar.LENGTH_INDEFINITE)
-                    .setAction(getString(R.string.dismiss), new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            // Dismiss Snackbar
-                        }
+                    .setAction(getString(R.string.dismiss), v -> {
+                        // Dismiss Snackbar
                     }).show();
             new LocationNotificationHelper(requireContext()).showLocationNotification();
         } else {
             // Handle case where location is null
             Snackbar.make(requireView(), getString(R.string.location_not_determined), Snackbar.LENGTH_LONG)
-                    .setAction(getString(R.string.dismiss), new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            // Dismiss Snackbar
-                        }
+                    .setAction(getString(R.string.dismiss), v -> {
+                        // Dismiss Snackbar
                     }).show();
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                requestLocationUpdates();
-            } else {
-                // Permission denied, handle it accordingly
-                permissionRequestCount++;
-                if (permissionRequestCount <= MAX_PERMISSION_REQUEST_ATTEMPTS) {
-                    requestLocationPermission();
-                } else {
-                    openAppSettings();
-                }
-            }
         }
     }
 
