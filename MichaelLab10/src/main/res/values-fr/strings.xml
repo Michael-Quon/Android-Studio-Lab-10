@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Michael Quon N01565129 -->
+<resources>
+    <string name="app_name">MichaelLab10</string>
+    <string name="celsius">Celsius</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="location">Emplacement</string>
+    <string name="location_not_determined">Localisation non déterminée</string>
+    <string name="permission_denied">Permission refusée</string>
+    <string name="location_permission_rationale">Une autorisation de localisation est requise pour afficher votre position actuelle.</string>
+    <string name="open_app_settings">Veuillez activer l\'autorisation de localisation dans les paramètres de l\'application.</string>
+    <string name="current_location">Localisation actuelle</string>
+    <string name="location_channel">Chaîne de localisation</string>
+    <string name="channel_for_location_notifications">Canal pour les notifications de localisation</string>
+</resources>

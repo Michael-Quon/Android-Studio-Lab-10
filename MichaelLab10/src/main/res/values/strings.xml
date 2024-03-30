@@ -1,75 +1,75 @@
 <!-- Michael Quon N01565129 -->
 <resources>
     <!-- App Information -->
-    <string name="app_name">MichaelLab10</string>
+    <string name="app_name" translatable="false">MichaelLab10</string>
     <string name="name_id_copyright" translatable="false">By: Michael Quon N01565129 ©</string>
-    <string name="description">The app\'s splash screen, shows for 3 seconds</string>
-    <string name="download_image">Download Image</string>
-    <string name="blank" />
+    <string name="description" translatable="false">The app\'s splash screen, shows for 3 seconds</string>
+    <string name="download_image" translatable="false">Download Image</string>
+    <string name="blank" translatable="false" />
 
     <!-- Developer Information -->
-    <string name="michael">Michael</string>
-    <string name="quon">Quon</string>
-    <string name="n01565129">N01565129</string>
-    <string name="mq">MQ</string>
-    <string name="name_id">Michael Quon N01565129</string>
+    <string name="michael" translatable="false">Michael</string>
+    <string name="quon" translatable="false">Quon</string>
+    <string name="n01565129" translatable="false">N01565129</string>
+    <string name="mq" translatable="false">MQ</string>
+    <string name="name_id" translatable="false">"Michael Quon N01565129 "</string>
 
     <!-- Temperature Related -->
-    <string name="temperature_format">Temperature: %.1f %s</string>
+    <string name="temperature_format" translatable="false">Temperature: %.1f %s</string>
     <string name="celsius">Celsius</string>
     <string name="fahrenheit">Fahrenheit</string>
-    <string name="unit_celsius">°C</string>
-    <string name="unit_fahrenheit">°F</string>
-    <string name="unit_metric">metric</string>
-    <string name="unit_imperial">imperial</string>
-    <string name="temp_unit_key">temp_unit</string>
-    <string name="default_temp_unit">metric</string>
+    <string name="unit_celsius" translatable="false">°C</string>
+    <string name="unit_fahrenheit" translatable="false">°F</string>
+    <string name="unit_metric" translatable="false">metric</string>
+    <string name="unit_imperial" translatable="false">imperial</string>
+    <string name="temp_unit_key" translatable="false">temp_unit</string>
+    <string name="default_temp_unit" translatable="false">metric</string>
 
     <!-- API Information -->
-    <string name="api_key">b6c90bd7670d2dd27d3417dd128194fc</string>
-    <string name="api_url">"https://api.openweathermap.org/data/2.5/weather?q=%s&amp;appid=%s</string>
-    <string name="http_method_get">GET</string>
+    <string name="api_key" translatable="false">b6c90bd7670d2dd27d3417dd128194fc</string>
+    <string name="api_url" translatable="false">"https://api.openweathermap.org/data/2.5/weather?q=%s&amp;appid=%s</string>
+    <string name="http_method_get" translatable="false">GET</string>
 
     <!-- Key Names for JSON Response -->
-    <string name="coord_key">coord</string>
-    <string name="longitude_key">lon</string>
-    <string name="latitude_key">lat</string>
-    <string name="sys_key">sys</string>
-    <string name="country_key">country</string>
-    <string name="main_key">main</string>
-    <string name="humidity_key">humidity</string>
-    <string name="name_key">name</string>
-    <string name="weather_key">weather</string>
-    <string name="weather_description_key">description</string>
-    <string name="temperature_key">temp</string>
+    <string name="coord_key" translatable="false">coord</string>
+    <string name="longitude_key" translatable="false">lon</string>
+    <string name="latitude_key" translatable="false">lat</string>
+    <string name="sys_key" translatable="false">sys</string>
+    <string name="country_key" translatable="false">country</string>
+    <string name="main_key" translatable="false">main</string>
+    <string name="humidity_key" translatable="false">humidity</string>
+    <string name="name_key" translatable="false">name</string>
+    <string name="weather_key" translatable="false">weather</string>
+    <string name="weather_description_key" translatable="false">description</string>
+    <string name="temperature_key" translatable="false">temp</string>
 
     <!-- Labels -->
-    <string name="longitude_label">Longitude: %.4f</string>
-    <string name="latitude_label">Latitude: %.4f</string>
-    <string name="country_label">Country: %s</string>
-    <string name="humidity_label">Humidity: %d</string>
-    <string name="city_label">City: %s</string>
-    <string name="description_label">Description: %s</string>
-    <string name="failed_error">Failed to load image. \nError: </string>
+    <string name="longitude_label" translatable="false">Longitude: %.4f</string>
+    <string name="latitude_label" translatable="false">Latitude: %.4f</string>
+    <string name="country_label" translatable="false">Country: %s</string>
+    <string name="humidity_label" translatable="false">Humidity: %d</string>
+    <string name="city_label" translatable="false">City: %s</string>
+    <string name="description_label" translatable="false">Description: %s</string>
+    <string name="failed_error" translatable="false">Failed to load image. \nError: </string>
 
     <!-- UI Labels -->
-    <string name="longitude">"Longitude: "</string>
-    <string name="latitude">"Latitude: "</string>
-    <string name="country">"Country: "</string>
-    <string name="humidity">"Humidity: "</string>
-    <string name="city">"City: "</string>
-    <string name="desc">"Desc: "</string>
-    <string name="temperature">"Temperature: "</string>
-    <string name="weather_error">"Error: "</string>
-    <string name="time_date">Time Date</string>
+    <string name="longitude" translatable="false">"Longitude: "</string>
+    <string name="latitude" translatable="false">"Latitude: "</string>
+    <string name="country" translatable="false">"Country: "</string>
+    <string name="humidity" translatable="false">"Humidity: "</string>
+    <string name="city" translatable="false">"City: "</string>
+    <string name="desc" translatable="false">"Desc: "</string>
+    <string name="temperature" translatable="false">"Temperature: "</string>
+    <string name="weather_error" translatable="false">"Error: "</string>
+    <string name="time_date" translatable="false">Time Date</string>
     <string name="location">Location</string>
-    <string name="adclickcounter">adClickCounter</string>
-    <string name="saved">SAVED</string>
-    <string name="location_permission_denied">Location permission denied</string>
-    <string name="dismiss">Dismiss</string>
-    <string name="time_dateTV">"yyyy-MM-dd         HH:mm:ss"</string>
-    <string name="location_snackbar_message">Latitude: %.4f, Longitude: %.4f</string>
-    <string name="location_not_determined">Location not determined</string>
+    <string name="adclickcounter" translatable="false">adClickCounter</string>
+    <string name="saved" translatable="false">SAVED</string>
+    <string name="location_permission_denied" translatable="false">Location permission denied</string>
+    <string name="dismiss" translatable="false">Dismiss</string>
+    <string name="time_dateTV" translatable="false">"yyyy-MM-dd         HH:mm:ss"</string>
+    <string name="location_snackbar_message" translatable="false">Latitude: %.4f, Longitude: %.4f</string>
+    <string name="location_not_determined" translatable="false">Location not determined</string>
     <string name="permission_denied">Permission denied</string>
     <string name="location_permission_rationale">Location permission is required to show your current location.</string>
     <string name="open_app_settings">Please enable location permission in app settings.</string>

@@ -13,7 +13,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -51,10 +50,9 @@ public class M4QFragment extends Fragment {
     private static final int MAX_PERMISSION_REQUEST_ATTEMPTS = 2;
 
     private TextView datetimeTV;
-    private Button locationButton;
 
-    private Handler handler = new Handler();
-    private Runnable updateTimeRunnable = new Runnable() {
+    private final Handler handler = new Handler();
+    private final Runnable updateTimeRunnable = new Runnable() {
         @Override
         public void run() {
             SimpleDateFormat sdf = new SimpleDateFormat(getString(R.string.time_dateTV), Locale.getDefault());
@@ -78,8 +76,8 @@ public class M4QFragment extends Fragment {
 
     class LocationNotificationHelper {
 
-        private Context mContext;
-        private NotificationManager mNotificationManager;
+        private final Context mContext;
+        private final NotificationManager mNotificationManager;
 
         public LocationNotificationHelper(Context context) {
             mContext = context;
@@ -97,9 +95,7 @@ public class M4QFragment extends Fragment {
                     String content = getString(R.string.location_snackbar_message, latitude, longitude);
 
                     Notification notification = createNotification(title, content);
-                    if (notification != null) {
-                        mNotificationManager.notify(NOTIFICATION_ID, notification);
-                    }
+                    mNotificationManager.notify(NOTIFICATION_ID, notification);
                 }
             }
         }
@@ -111,16 +107,14 @@ public class M4QFragment extends Fragment {
                     .setContentText(content)
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                CharSequence name = getString(R.string.location_channel);
-                String description = getString(R.string.channel_for_location_notifications);
-                int importance = NotificationManager.IMPORTANCE_DEFAULT;
-                NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
-                channel.setDescription(description);
+            CharSequence name = getString(R.string.location_channel);
+            String description = getString(R.string.channel_for_location_notifications);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
 
-                mNotificationManager.createNotificationChannel(channel);
-                builder.setChannelId(CHANNEL_ID);
-            }
+            mNotificationManager.createNotificationChannel(channel);
+            builder.setChannelId(CHANNEL_ID);
 
             return builder.build();
         }
@@ -145,7 +139,7 @@ public class M4QFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_m4_q, container, false);
 
         datetimeTV = rootView.findViewById(R.id.Mic_time_date);
-        locationButton = rootView.findViewById(R.id.Mic_Locationbutton);
+        Button locationButton = rootView.findViewById(R.id.Mic_Locationbutton);
 
         preferences = requireContext().getSharedPreferences(getString(R.string.saved), Context.MODE_PRIVATE);
 
@@ -169,7 +163,7 @@ public class M4QFragment extends Fragment {
         // Initialize Mobile Ads SDK
         MobileAds.initialize(requireContext(), new OnInitializationCompleteListener() {
             @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
                 // SDK initialization completed
             }
         });
@@ -221,7 +215,7 @@ public class M4QFragment extends Fragment {
                 public void onProviderDisabled(@NonNull String provider) {}
 
                 @Override
-                public void onStatusChanged(String provider, int status, Bundle extras) {}
+                public void onStatusChanged(String provider, int status, Bundle extras){}
             });
         }
     }

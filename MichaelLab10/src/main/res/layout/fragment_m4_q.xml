@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="620dp"
         app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-6778298237961736/6724398200"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
