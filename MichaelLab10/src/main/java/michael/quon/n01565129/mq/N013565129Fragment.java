@@ -77,7 +77,6 @@ public class N013565129Fragment extends Fragment {
         return rootView;
     }
 
-
     // Method to load video URL into WebView
     private void loadVideoUrl(String videoUrl) {
         WebSettings webSettings = webView.getSettings();

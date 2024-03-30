@@ -50,7 +50,7 @@
     <string name="humidity_label">Humidity: %d</string>
     <string name="city_label">City: %s</string>
     <string name="description_label">Description: %s</string>
-    <string name="failed_error">Failed to load image. \nError: %s</string>
+    <string name="failed_error">Failed to load image. \nError: </string>
 
     <!-- UI Labels -->
     <string name="longitude">"Longitude: "</string>
@@ -61,6 +61,21 @@
     <string name="desc">"Desc: "</string>
     <string name="temperature">"Temperature: "</string>
     <string name="weather_error">"Error: "</string>
+    <string name="time_date">Time Date</string>
+    <string name="location">Location</string>
+    <string name="adclickcounter">adClickCounter</string>
+    <string name="saved">SAVED</string>
+    <string name="location_permission_denied">Location permission denied</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="time_dateTV">"yyyy-MM-dd         HH:mm:ss"</string>
+    <string name="location_snackbar_message">Latitude: %.4f, Longitude: %.4f</string>
+    <string name="location_not_determined">Location not determined</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="location_permission_rationale">Location permission is required to show your current location.</string>
+    <string name="open_app_settings">Please enable location permission in app settings.</string>
+    <string name="current_location">Current Location</string>
+    <string name="location_channel">Location Channel</string>
+    <string name="channel_for_location_notifications">Channel for location notifications</string>
 
     <!-- Spinner Items -->
     <string-array name="spinner_items">
@@ -80,7 +95,7 @@
         <item>Sydney</item>
     </string-array>
 
-    !-- Define an array for video titles -->
+    <!-- Define an array for video titles -->
     <string-array name="video_titles">
         <item>Cars Trailer</item>
         <item>Kung Fu Panda Trailer</item>

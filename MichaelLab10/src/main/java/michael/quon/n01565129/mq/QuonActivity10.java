@@ -27,7 +27,7 @@ public class QuonActivity10 extends AppCompatActivity implements BottomNavigatio
     Mi1chaelFragment mi1chaelFragment = new Mi1chaelFragment();
     Qu2onFragment qu2onFragment = new Qu2onFragment();
     N013565129Fragment n013565129Fragment = new N013565129Fragment();
-    //MichaelFragment michaelFragment = new MichaelFragment();
+    M4QFragment m4QFragment = new M4QFragment();
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -56,14 +56,14 @@ public class QuonActivity10 extends AppCompatActivity implements BottomNavigatio
                     .commit();
             return true;
         }
-//
-//        if (itemId == R.id.Mic_MQ) {
-//            getSupportFragmentManager()
-//                    .beginTransaction()
-//              //      .replace(R.id.MicFlFragment, m4qFragment)
-//                    .commit();
-//            return true;
-//        }
+
+        if (itemId == R.id.Mic_MQ) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.MicFlFragment, m4QFragment)
+                    .commit();
+            return true;
+        }
 
         return false;
     }
