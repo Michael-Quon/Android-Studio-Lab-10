@@ -152,7 +152,13 @@ public class M4QFragment extends Fragment {
             }
         });
 
-        locationButton.setOnClickListener(v -> requestLocationPermission());
+        locationButton.setOnClickListener(v -> {
+            if (permissionDenied) {
+                openAppSettings();
+            } else {
+                requestLocationPermission();
+            }
+        });
 
         // Initialize Mobile Ads SDK
         MobileAds.initialize(requireContext(), initializationStatus -> {
@@ -172,7 +178,7 @@ public class M4QFragment extends Fragment {
         handler.post(updateTimeRunnable); // updates time
     }
 
-    // Declare an ActivityResultLauncher for requesting location permission
+    private boolean permissionDenied = false;
     ActivityResultLauncher<String[]> requestLocationPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), permissions -> {
                 if (permissions.containsKey(Manifest.permission.ACCESS_FINE_LOCATION) &&
@@ -185,7 +191,8 @@ public class M4QFragment extends Fragment {
                     if (permissionRequestCount <= MAX_PERMISSION_REQUEST_ATTEMPTS) {
                         requestLocationPermission();
                     } else {
-                        openAppSettings();
+                        permissionDenied = true;
+                        Toast.makeText(requireContext(), getString(R.string.permission_denied), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
